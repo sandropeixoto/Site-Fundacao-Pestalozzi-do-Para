@@ -16,7 +16,7 @@ export default function Hero() {
             <div className="relative">
               <div className="absolute inset-4 bg-gradient-to-tr from-pestalozzi-blue/20 to-pestalozzi-green/20 rounded-full blur-2xl" />
               <img 
-                src="/logo-simbolo.png" 
+                src="./logo-simbolo.png" 
                 alt="Logo Símbolo Fundação Pestalozzi do Pará" 
                 className="relative h-28 md:h-36 w-auto object-contain drop-shadow-lg"
               />
