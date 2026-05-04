@@ -17,13 +17,16 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <a href="#" className="flex flex-col justify-center">
-            <span className="text-xl tracking-tight text-slate-900 font-light uppercase leading-none">
-              Fundação <span className="font-logo-heavy font-black tracking-normal text-pestalozzi-blue">Pestalozzi</span>
-            </span>
-            <span className="text-xs text-slate-500 uppercase tracking-[0.2em] font-medium mt-1">
-              do Pará
-            </span>
+          <a href="#" className="flex items-center gap-3">
+            <img src="./logo-simbolo.png" alt="Logo Símbolo Fundação Pestalozzi do Pará" className="h-10 w-auto object-contain" />
+            <div className="flex flex-col justify-center">
+              <span className="text-xl tracking-tight text-slate-900 font-light uppercase leading-none">
+                Fundação <span className="font-logo-heavy font-black tracking-normal text-pestalozzi-blue">Pestalozzi</span>
+              </span>
+              <span className="text-xs text-slate-500 uppercase tracking-[0.2em] font-medium mt-1">
+                do Pará
+              </span>
+            </div>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
