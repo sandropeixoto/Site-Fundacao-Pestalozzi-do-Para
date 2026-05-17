@@ -8,9 +8,6 @@ export default defineConfig(({mode}) => {
   return {
     base: './', // Necessário para compilar caminhos relativos ao usar GitHub Pages
     plugins: [react(), tailwindcss()],
-    define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
