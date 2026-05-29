@@ -10,6 +10,7 @@ import About from './sections/About';
 import HowWeHelp from './sections/HowWeHelp';
 import Programs from './sections/Programs';
 import Differentials from './sections/Differentials';
+import Gallery from './sections/Gallery';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <HowWeHelp />
         <Programs />
         <Differentials />
+        <Gallery />
       </main>
       <Footer />
     </div>

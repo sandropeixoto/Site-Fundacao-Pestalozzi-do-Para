@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Header() {
@@ -11,6 +11,7 @@ export default function Header() {
     { name: 'Como Ajudamos', href: '#como-ajudamos' },
     { name: 'Programas', href: '#programas' },
     { name: 'Diferenciais', href: '#diferenciais' },
+    { name: 'Galeria', href: '#galeria' },
   ];
 
   return (
@@ -40,10 +41,11 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#programas"
-              className="px-5 py-2.5 rounded-full bg-pestalozzi-red text-white text-sm font-medium hover:bg-rose-700 transition-colors shadow-sm"
+              href="#"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-pestalozzi-red text-white text-sm font-medium hover:bg-rose-700 transition-colors shadow-sm"
             >
-              Conheça os Programas
+              <Heart size={16} />
+              Doar
             </a>
           </nav>
 
