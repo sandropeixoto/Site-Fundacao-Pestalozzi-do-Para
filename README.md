@@ -27,6 +27,27 @@ O Site Institucional da Fundação Pestalozzi do Pará é uma plataforma moderna
 > **Performance Otimizada**  
 > Arquitetura moderna focada em performance de carregamento rápido e fluidez visual nas interações.
 
+## 🎨 Padrão de Design e Identidade Visual
+
+O projeto adota uma abordagem **Clean Minimalist**, garantindo uma interface limpa, respirável e com foco no conteúdo pedagógico e institucional. O design utiliza áreas de respiro, sombras suaves (shadows) e bordas arredondadas que transmitem acolhimento e profissionalismo.
+
+### Cores Institucionais
+A paleta de cores foi desenvolvida baseada na identidade visual da fundação, utilizando matizes amigáveis e aplicados estrategicamente em gradientes inspiradores:
+- 🔴 **Pestalozzi Red** (`#E11D48`): Utilizado para chamadas de ação (CTAs primários e coração de doador), destacando vida, acolhimento e amor.
+- 🔵 **Pestalozzi Blue** (`#2563EB`): Presente em destaques e texturas textuais institucionais, transmite segurança, clareza e confiança.
+- 🟢 **Pestalozzi Green** (`#16A34A`): Forma gradientes vibrantes mesclados com o azul em logotipos e fundos imersivos, sinalizando inclusão e crescimento.
+- ⚪ **Tons Neutros** (`slate-50` até `slate-900`): Montam a estrutura, cards limpos, badgets e textos super nítidos focando em contraste dinâmico de legibilidade.
+
+### Tipografia
+- **Primária**: [Inter](https://fonts.google.com/specimen/Inter) assume as construções base (`font-sans`), sendo moderna, geométrica e extremamente otimizada para multitelas.
+- **Marca**: Aplicação de pesos extras e `bg-clip-text` sobre as fontes para o letreiro do Hero e seções impactantes.
+
+### Componentes & Interações (Motion/Micro-interações)
+- **Componentes Flutuantes**: Cartões indicadores de doação animados verticalmente dão vida ao quadro de destaque sem poluir a interface.
+- **Modal Lightbox / Galeria**: Um impressionante visualizador de tela cheia que entra em transição elástica, aplicando `backdrop-blur-sm` no background com escurecimento cinematográfico.
+- **Acessibilidade de Navegação**: Toda a galeria absorve eventos do teclado (`Esc`, Setas Direita/Esquerda), desativa o scroll do site durante a visualização, criando uma imersão perfeita e moderna que exibe um elegante ponteiro (olho/lente) durante o mouse-hover nas miniaturas de fotos.
+- **Animações Fluidas (Framer)**: Efeitos de fade-up (surgir de baixo), stagger (cascata) listando os diferenciais/programas e suavidade absoluta no carregamento das seções garantem um site vivo e premiável.
+
 ## 🛠️ Stack Técnica
 
 | Tecnologia | Descrição |
