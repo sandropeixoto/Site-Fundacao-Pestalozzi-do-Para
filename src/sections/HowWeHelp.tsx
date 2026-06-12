@@ -3,7 +3,7 @@ import { HeartPulse } from 'lucide-react';
 
 export default function HowWeHelp() {
   return (
-    <section id="como-ajudamos" className="py-24 bg-slate-50 relative">
+    <section id="como-ajudamos" className="py-16 md:py-20 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div

@@ -36,17 +36,33 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-slate-600 hover:text-pestalozzi-blue transition-colors"
-              >
+               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="#"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-pestalozzi-red text-white text-sm font-medium hover:bg-rose-700 transition-colors shadow-sm"
+            <motion.a
+              href="https://doacoes.fundacaopestalozzidopara.org.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              animate={{
+                scale: [1, 1.04, 1],
+                boxShadow: [
+                  "0 4px 6px -1px rgba(225, 29, 72, 0.15), 0 2px 4px -1px rgba(225, 29, 72, 0.1)",
+                  "0 0 0 10px rgba(225, 29, 72, 0.25)",
+                  "0 4px 6px -1px rgba(225, 29, 72, 0.15), 0 2px 4px -1px rgba(225, 29, 72, 0.1)"
+                ]
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              whileHover={{ scale: 1.08 }}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-pestalozzi-red text-white text-sm font-medium hover:bg-rose-700 transition-colors shadow-md"
             >
-              <Heart size={16} />
+              <Heart size={16} className="fill-current" />
               Doar
-            </a>
+            </motion.a>
           </nav>
 
           <button
@@ -76,6 +92,18 @@ export default function Header() {
                 {link.name}
               </a>
             ))}
+            <div className="pt-2 px-3">
+              <a
+                href="https://doacoes.fundacaopestalozzidopara.org.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-full bg-pestalozzi-red text-white text-base font-medium hover:bg-rose-700 transition-colors shadow-md shadow-rose-500/20"
+              >
+                <Heart size={18} className="fill-current" />
+                Doar
+              </a>
+            </div>
           </div>
         </motion.div>
       )}

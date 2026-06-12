@@ -31,7 +31,7 @@ export default function About() {
   };
 
   return (
-    <section id="sobre" className="py-24 bg-white relative">
+    <section id="sobre" className="py-16 md:py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2 

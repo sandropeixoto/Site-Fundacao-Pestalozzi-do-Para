@@ -16,7 +16,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="inicio" className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="inicio" className="relative pt-24 pb-14 md:pt-36 md:pb-24 overflow-hidden">
       <div className="absolute inset-0 bg-slate-50 -z-10" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -108,14 +108,16 @@ export default function Hero() {
               className="absolute -bottom-6 -left-4 md:-left-8 z-10"
             >
               <motion.a
-                href="#"
+                href="https://doacoes.fundacaopestalozzidopara.org.br/"
+                target="_blank"
+                rel="noopener noreferrer"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 whileHover={{ scale: 1.05 }}
                 className="bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-slate-50 cursor-pointer block"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-pestalozzi-red/10 rounded-full flex items-center justify-center text-pestalozzi-red">
-                  <Heart size={24} />
+                  <Heart size={24} className="fill-current" />
                 </div>
                 <div className="pr-4">
                   <p className="text-sm font-bold text-slate-900 leading-tight">Seja um Doador</p>
@@ -132,7 +134,9 @@ export default function Hero() {
               className="absolute -top-6 -right-4 md:-right-8 z-10"
             >
               <motion.a
-                href="#"
+                href="https://doacoes.fundacaopestalozzidopara.org.br/"
+                target="_blank"
+                rel="noopener noreferrer"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 whileHover={{ scale: 1.05 }}
