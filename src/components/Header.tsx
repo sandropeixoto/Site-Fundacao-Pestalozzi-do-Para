@@ -1,9 +1,10 @@
 import { motion } from 'motion/react';
 import { Menu, X, Heart } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('inicio');
 
   const navLinks = [
     { name: 'Início', href: '#inicio' },
@@ -13,6 +14,36 @@ export default function Header() {
     { name: 'Diferenciais', href: '#diferenciais' },
     { name: 'Galeria', href: '#galeria' },
   ];
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    navLinks.forEach((link) => {
+      const id = link.href.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -31,15 +62,29 @@ export default function Header() {
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-pestalozzi-blue transition-colors"
-               >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace('#', '');
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-semibold transition-colors relative py-2 ${
+                    isActive
+                      ? 'text-pestalozzi-blue'
+                      : 'text-slate-600 hover:text-pestalozzi-blue'
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavIndicator"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-pestalozzi-blue rounded-full"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </a>
+              );
+            })}
             <motion.a
               href="https://doacoes.fundacaopestalozzidopara.org.br/"
               target="_blank"
@@ -82,16 +127,23 @@ export default function Header() {
           className="md:hidden bg-white border-b border-slate-100"
         >
           <div className="px-4 pt-2 pb-6 space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-pestalozzi-blue transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.replace('#', '');
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-3 py-3 rounded-lg text-base font-semibold transition-colors ${
+                    isActive
+                      ? 'bg-slate-50 text-pestalozzi-blue'
+                      : 'text-slate-700 hover:bg-slate-50 hover:text-pestalozzi-blue'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
             <div className="pt-2 px-3">
               <a
                 href="https://doacoes.fundacaopestalozzidopara.org.br/"
